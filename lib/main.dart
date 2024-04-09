@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
+import 'core/route/route.dart';
+import 'core/route/route_name.dart';
+import 'core/theme/theme.dart';
 
-void main() {
-  runApp(const MainApp());
+final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Flutter Drawing Apps",
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.light,
+      initialRoute: AppRouteName.drawingRoom,
+      onGenerateRoute: AppRoute.generate,
+      navigatorObservers: [routeObserver],
     );
   }
 }
