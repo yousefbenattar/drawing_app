@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  image_gallery_saver: ^2.0.3
+  permission_handler: ^11.3.1
+  screenshot: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +20,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/

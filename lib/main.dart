@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'core/route/route.dart';
-import 'core/route/route_name.dart';
-import 'core/theme/theme.dart';
+import 'view/home.dart';
+import 'view/theme/theme.dart';
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 
@@ -21,9 +20,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.light,
-      initialRoute: AppRouteName.drawingRoom,
-      onGenerateRoute: AppRoute.generate,
-      navigatorObservers: [routeObserver],
+      home:const Home(),
     );
   }
 }
