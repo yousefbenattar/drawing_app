@@ -7,9 +7,11 @@ environment:
   sdk: '>=3.3.1 <4.0.0'
 
 dependencies:
+  easy_splash_screen: ^1.0.4
   flutter:
     sdk: flutter
   image_gallery_saver: ^2.0.3
+  path_provider: ^2.1.2
   permission_handler: ^11.3.1
   screenshot: ^2.3.0
 

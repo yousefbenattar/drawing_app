@@ -1,19 +1,19 @@
 import 'package:drawing_app/view/theme/color.dart';
 import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
+import '../controller/drawing_image_controller.dart';
 import '../model/point.dart';
-import '../controller/drawing_controller.dart';
 
-class DrawingRoomScreen extends StatefulWidget {
-  const DrawingRoomScreen({super.key});
+
+class DrawingImageRoomScreen extends StatefulWidget {
+  const DrawingImageRoomScreen({super.key});
 
   @override
-  State<DrawingRoomScreen> createState() => _DrawingRoomScreenState();
+  State<DrawingImageRoomScreen> createState() => _DrawingImageRoomScreenState();
 }
 
-class _DrawingRoomScreenState extends DarawingController {
-
-  @override
+class _DrawingImageRoomScreenState extends DarawingImageController {
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -55,7 +55,10 @@ class _DrawingRoomScreenState extends DarawingController {
           Screenshot(
             controller: screenshotController,
             child: Container(
-              color: Colors.white,
+                decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage("assets/1.png"),fit: BoxFit.fill)
+                    ),
+              //color: Colors.white,
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height/*- 220*/,
               //color: Colors.blue,
@@ -96,8 +99,8 @@ class _DrawingRoomScreenState extends DarawingController {
                   painter: DrawingPainter(
                     drawingPoints: drawingPoints,
                   ),
-                  child: SizedBox(
-                    
+                  child: Container(
+                  
                    // color: Colors.white,
                     height:MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
@@ -162,6 +165,7 @@ class _DrawingRoomScreenState extends DarawingController {
     onPressed: function, icon:icon,color: Colors.black,iconSize: 40,);}
 }
 
+
 class DrawingPainter extends CustomPainter {
   final List<DrawingPoint> drawingPoints;
 
@@ -187,7 +191,6 @@ class DrawingPainter extends CustomPainter {
       }
     }
   }
-
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;

@@ -3,12 +3,12 @@ import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:screenshot/screenshot.dart';
 import '../model/point.dart';
-import '../view/drawing_screen.dart';
+import '../view/drawing_image_screen.dart';
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
 import 'dart:async';
 
-abstract class DarawingController extends State<DrawingRoomScreen>{
+abstract class DarawingImageController extends State<DrawingImageRoomScreen>{
   var historyDrawingPoints = <DrawingPoint>[];
   var drawingPoints = <DrawingPoint>[];
   DrawingPoint? currentDrawingPoint;
